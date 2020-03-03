@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.sarvam.base.BaseActivity
 import com.sarvam.base.BaseViewModel
 import com.sarvam.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 

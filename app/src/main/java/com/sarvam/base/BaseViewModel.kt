@@ -7,7 +7,7 @@ import com.sarvam.R
 import com.sarvam.models.BaseExtras
 import com.sarvam.webservices.ApiClient
 
-class BaseViewModel(application: Application) : AndroidViewModel(application) {
+open class BaseViewModel(application: Application) : AndroidViewModel(application) {
     val baseExtras: MutableLiveData<BaseExtras> by lazy {
         return@lazy MutableLiveData<BaseExtras>()
     }
