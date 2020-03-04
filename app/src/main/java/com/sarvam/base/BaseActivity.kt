@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator
 import android.app.Activity
 import android.app.Dialog
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import android.view.animation.LinearInterpolator
@@ -19,7 +18,6 @@ import com.sarvam.databinding.AppLoadingDialogBinding
 import com.sarvam.databinding.BaseMainBinding
 import com.sarvam.utils.AppUtils
 import com.sarvam.utils.constant.AppConstant.MY_PERMISSION_ACCESS_LOCATION
-import kotlinx.android.synthetic.main.toolbar.view.*
 
 
 /**
@@ -27,7 +25,7 @@ import kotlinx.android.synthetic.main.toolbar.view.*
  */
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
-    private var mViewModel: BaseViewModel? = null
+    var mViewModel: BaseViewModel? = null
     private var mProgressDialog: Dialog? = null
     protected var mBinding: T? = null
     private var isLocationPermissionGranted = false
@@ -45,6 +43,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         mBinding = bind(view)!!
         setSupportActionBar(mBaseBinding.toolbar.toolbar)
 
+        mViewModel = getViewModel()
 
         mViewModel?.baseExtras?.observe(this, Observer { baseExtras ->
             if (baseExtras?.apiError != null) {
@@ -59,7 +58,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         })
     }
 
-    fun setTitle(title: String){
+    fun setTitle(title: String) {
         mBaseBinding.toolbar.title.text = title
     }
 
@@ -127,6 +126,18 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
                 dismiss()
             }
         }
+    }
+
+    protected fun replaceFragment(resId: Int, fragment: BaseFragment) {
+        val ft = supportFragmentManager.beginTransaction()
+        ft.replace(resId, fragment)
+        ft.commit()
+    }
+
+    protected fun addFragment(resId: Int, fragment: BaseFragment) {
+        val ft = supportFragmentManager.beginTransaction()
+        ft.add(resId, fragment)
+        ft.commit()
     }
 
 }
