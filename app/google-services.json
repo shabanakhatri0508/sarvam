@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "907427474853",
+    "firebase_url": "https://sarvam-debug.firebaseio.com",
+    "project_id": "sarvam-debug",
+    "storage_bucket": "sarvam-debug.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907427474853:android:34e86c52997434850d8c4c",
+        "android_client_info": {
+          "package_name": "com.sarvam.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907427474853-vm8mtdkuriju6l5ek9j3q9hon3sn8ni4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sarvam.debug",
+            "certificate_hash": "5be0c414d6d810c1c7d4563396d89f64461b764e"
+          }
+        },
+        {
+          "client_id": "907427474853-canuhuc2pelnlt1fgtcavrp9s4i2340d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZtWKeUCUD_tX542qqg05QB6L5MaSG_Gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907427474853-canuhuc2pelnlt1fgtcavrp9s4i2340d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
