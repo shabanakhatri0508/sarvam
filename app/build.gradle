@@ -16,7 +16,7 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 ext.debugKeystorePath = '/Sarvam/debug.keystore'
 def debugKeystorePropertiesFile = file(userHome + "/Sarvam/debug-keystore.properties")
 def debugKeystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(debugKeystorePropertiesFile))
+debugKeystoreProperties.load(new FileInputStream(debugKeystorePropertiesFile))
 
 android {
     signingConfigs {
@@ -43,10 +43,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.sarvam_debug
     }
     buildTypes {
         debug {
+            signingConfig signingConfigs.sarvam_debug
             applicationIdSuffix ".debug"
             versionNameSuffix '-DEBUG'
             resValue "string", "app_name", "Sarvam-Debug"
