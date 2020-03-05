@@ -9,10 +9,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
 import android.text.TextUtils
+import com.sarvam.BuildConfig
 
 object AppUtils {
-
-    var isLogEnabled = true
 
     /**
      * A method to show device keyboard for user input
@@ -69,25 +68,25 @@ object AppUtils {
     }
 
     fun printE(tag: String, message: String) {
-        if (isLogEnabled) {
+        if (BuildConfig.DEBUG) {
             Log.e(tag, message)
         }
     }
 
     fun printV(tag: String, message: String) {
-        if (isLogEnabled) {
+        if (BuildConfig.DEBUG) {
             Log.v(tag, message)
         }
     }
 
     fun printD(tag: String, message: String) {
-        if (isLogEnabled) {
+        if (BuildConfig.DEBUG) {
             Log.d(tag, message)
         }
     }
 
     fun printI(tag: String, message: String) {
-        if (isLogEnabled) {
+        if (BuildConfig.DEBUG) {
             Log.d(tag, message)
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,17 +9,69 @@
             type="com.sarvam.ui.authentication.AuthenticationViewModel" />
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.fragments.OtpFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
+            style="@style/Roboto.Large"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@{viewModel.phoneNo}" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="center_horizontal"
+            android:text="@string/enter_otp_her"
+            android:textColor="@color/colorDarkGrey" />
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center_horizontal">
+
+            <EditText
+                android:id="@+id/edt_one"
+                style="@style/otpEditTextStyle"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/otp_view_bg"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/edt_two"
+                style="@style/otpEditTextStyle"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/otp_view_bg"
+                tools:text="0" />
+
+            <EditText
+                android:id="@+id/edt_three"
+                style="@style/otpEditTextStyle"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/otp_view_bg"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/edt_four"
+                style="@style/otpEditTextStyle"
+                android:background="@drawable/otp_view_bg"
+                android:imeOptions="actionDone"
+                tools:text="5" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/Roboto.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:paddingStart="@dimen/huge_padding"
+            android:paddingEnd="@dimen/huge_padding"
+            android:text="@string/submit"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
 </layout>

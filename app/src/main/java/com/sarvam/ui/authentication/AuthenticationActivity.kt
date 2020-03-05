@@ -10,15 +10,17 @@ import com.sarvam.databinding.ActivityAuthenticationBinding
 import com.sarvam.ui.fragments.LoginFragment
 import com.sarvam.ui.fragments.OtpFragment
 
-class AuthenticationActivity : BaseActivity<ActivityAuthenticationBinding>(),
-    LoginFragment.OnFragmentInteractionListener, OtpFragment.OnFragmentInteractionListener {
+class AuthenticationActivity : BaseActivity<ActivityAuthenticationBinding>() {
+    lateinit var authenticationViewModel: AuthenticationViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
     }
 
     private fun init() {
-        setTitle(getString(R.string.login))
+        setTitle(getString(R.string.submit))
+        authenticationViewModel = ViewModelProvider.AndroidViewModelFactory(application)
+            .create(AuthenticationViewModel::class.java)
         /*load Default fragment*/
         addFragment(R.id.container, LoginFragment())
     }
@@ -28,8 +30,5 @@ class AuthenticationActivity : BaseActivity<ActivityAuthenticationBinding>(),
     override fun getViewModel(): BaseViewModel {
         return ViewModelProvider.AndroidViewModelFactory(this.application)
             .create(AuthenticationViewModel::class.java)
-    }
-
-    override fun onFragmentInteraction(uri: Uri) {
     }
 }

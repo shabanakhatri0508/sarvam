@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import com.sarvam.R
 import com.sarvam.databinding.AppLoadingDialogBinding
 import com.sarvam.databinding.BaseMainBinding
+import com.sarvam.databinding.SimpleDialogBinding
 import com.sarvam.utils.AppUtils
 import com.sarvam.utils.constant.AppConstant.MY_PERMISSION_ACCESS_LOCATION
 

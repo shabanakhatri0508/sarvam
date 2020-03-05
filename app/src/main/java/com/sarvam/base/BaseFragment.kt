@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.sarvam.R
+import com.sarvam.databinding.SimpleDialogBinding
 import com.sarvam.utils.AppUtils
 
 abstract class BaseFragment : Fragment() {
