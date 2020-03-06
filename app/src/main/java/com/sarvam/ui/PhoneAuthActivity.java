@@ -1,5 +1,33 @@
 package com.sarvam.ui;
 
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseTooManyRequestsException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.sarvam.R;
+
+import java.util.concurrent.TimeUnit;
+
+
 public class PhoneAuthActivity extends AppCompatActivity implements
         View.OnClickListener {
 
@@ -278,33 +306,33 @@ public class PhoneAuthActivity extends AppCompatActivity implements
                 // Code sent state, show the verification field, the
                 enableViews(mVerifyButton, mResendButton, mPhoneNumberField, mVerificationField);
                 disableViews(mStartButton);
-                mDetailText.setText(R.string.status_code_sent);
+                mDetailText.setText("Code sent"/*R.string.status_code_sent""*/);
                 break;
             case STATE_VERIFY_FAILED:
                 // Verification has failed, show all options
                 enableViews(mStartButton, mVerifyButton, mResendButton, mPhoneNumberField,
                         mVerificationField);
-                mDetailText.setText(R.string.status_verification_failed);
+                mDetailText.setText("Verification failed"/*R.string.status_verification_failed*/);
                 break;
             case STATE_VERIFY_SUCCESS:
                 // Verification has succeeded, proceed to firebase sign in
                 disableViews(mStartButton, mVerifyButton, mResendButton, mPhoneNumberField,
                         mVerificationField);
-                mDetailText.setText(R.string.status_verification_succeeded);
+                mDetailText.setText("Verification done"/*R.string.status_verification_succeeded*/);
 
                 // Set the verification text based on the credential
                 if (cred != null) {
                     if (cred.getSmsCode() != null) {
                         mVerificationField.setText(cred.getSmsCode());
                     } else {
-                        mVerificationField.setText(R.string.instant_validation);
+                        mVerificationField.setText("INstant validation"/*R.string.instant_validation*/);
                     }
                 }
 
                 break;
             case STATE_SIGNIN_FAILED:
                 // No-op, handled by sign-in check
-                mDetailText.setText(R.string.status_sign_in_failed);
+                mDetailText.setText("Status signin failed"/*R.string.status_sign_in_failed*/);
                 break;
             case STATE_SIGNIN_SUCCESS:
                 // Np-op, handled by sign-in check
@@ -316,7 +344,7 @@ public class PhoneAuthActivity extends AppCompatActivity implements
             mPhoneNumberViews.setVisibility(View.VISIBLE);
             mSignedInViews.setVisibility(View.GONE);
 
-            mStatusText.setText(R.string.signed_out);
+            mStatusText.setText("R.string.signed_out");
         } else {
             // Signed in
             mPhoneNumberViews.setVisibility(View.GONE);
@@ -326,8 +354,8 @@ public class PhoneAuthActivity extends AppCompatActivity implements
             mPhoneNumberField.setText(null);
             mVerificationField.setText(null);
 
-            mStatusText.setText(R.string.signed_in);
-            mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+            mStatusText.setText("R.string.signed_in");
+            mDetailText.setText("Format "+ user.getUid());
         }
     }
 
