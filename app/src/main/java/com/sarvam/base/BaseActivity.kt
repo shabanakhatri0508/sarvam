@@ -129,8 +129,8 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         }
     }
 
-    protected fun replaceFragment(resId: Int, fragment: BaseFragment) {
-        val ft = supportFragmentManager.beginTransaction()
+    protected fun replaceFragment(resId: Int, fragment: BaseFragment, backStackMessage: String?) {
+        val ft = supportFragmentManager.beginTransaction().addToBackStack(backStackMessage)
         ft.replace(resId, fragment)
         ft.commit()
     }

@@ -29,7 +29,7 @@
             android:id="@+id/til_email_or_phone_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp">
+            android:layout_marginTop="@dimen/extra_large_margin">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_email_or_phone_no"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/extra_large_margin"
             android:background="@drawable/btn_bg"
             android:gravity="center"
             android:paddingStart="@dimen/huge_padding"
