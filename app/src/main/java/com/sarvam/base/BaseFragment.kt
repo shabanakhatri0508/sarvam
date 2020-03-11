@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.sarvam.R
+import com.sarvam.databinding.SimpleDialogBinding
 import com.sarvam.utils.AppUtils
 
 abstract class BaseFragment : Fragment() {
@@ -94,12 +95,14 @@ abstract class BaseFragment : Fragment() {
     }
 
     @Synchronized
-    protected fun replaceFragment(resId: Int, fragment: BaseFragment) {
-        val ft = fragmentManager?.beginTransaction()
+    protected fun replaceFragment(resId: Int, fragment: BaseFragment, backStackMessage: String?) {
+        val fragmentManager = activity?.supportFragmentManager
+        val ft = fragmentManager?.beginTransaction()?.addToBackStack(backStackMessage)
         ft?.replace(resId, fragment)?.commit()
     }
 
     protected fun addFragment(resId: Int, fragment: BaseFragment) {
+        val fragmentManager = activity?.supportFragmentManager
         val ft = fragmentManager?.beginTransaction()
         ft?.add(resId, fragment)
         ft?.addToBackStack(fragment::class.java.name)

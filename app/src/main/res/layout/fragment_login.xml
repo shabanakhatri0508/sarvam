@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sarvam.ui.authentication.AuthenticationViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/large_padding"
+        tools:context=".ui.fragments.LoginFragment">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email_or_phone_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_large_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email_or_phone_no"
+                style="@style/Roboto.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_or_phone_no"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="@dimen/large_padding"
+                android:paddingEnd="0dp"
+                android:paddingBottom="@dimen/large_padding"
+                android:text="@={viewModel.phoneNo}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/Roboto.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:background="@drawable/btn_bg"
+            android:gravity="center"
+            android:paddingStart="@dimen/huge_padding"
+            android:paddingEnd="@dimen/huge_padding"
+            android:text="@string/submit"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</layout>

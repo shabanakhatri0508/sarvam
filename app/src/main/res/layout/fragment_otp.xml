@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Roboto.Bold.Large"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.OtpFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <TextView
+            android:id="@+id/txt_instruction"
+            style="@style/Roboto.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:text="@string/enter_otp_her"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+        <LinearLayout
+            android:id="@+id/lin_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:gravity="bottom|center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_instruction">
+
+            <EditText
+                android:id="@+id/edt_one"
+                style="@style/otpEditTextStyle"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/otp_view_bg"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/edt_two"
+                style="@style/otpEditTextStyle"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/otp_view_bg"
+                tools:text="0" />
+
+            <EditText
+                android:id="@+id/edt_three"
+                style="@style/otpEditTextStyle"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:background="@drawable/otp_view_bg"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/edt_four"
+                style="@style/otpEditTextStyle"
+                android:background="@drawable/otp_view_bg"
+                android:imeOptions="actionDone"
+                tools:text="5" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/smallButtonStyle"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:background="@drawable/btn_bg"
+            android:text="@string/submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lin_otp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

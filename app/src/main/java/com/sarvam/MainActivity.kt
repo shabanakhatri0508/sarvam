@@ -1,15 +1,18 @@
 package com.sarvam
 
 import android.os.Bundle
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.sarvam.base.BaseActivity
 import com.sarvam.base.BaseViewModel
 import com.sarvam.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
+import com.sarvam.ui.authentication.AuthenticationViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTitle(getString(R.string.app_name))
     }
 
 
