@@ -26,7 +26,7 @@ import com.sarvam.utils.constant.AppConstant.MY_PERMISSION_ACCESS_LOCATION
  */
 
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
-    var mViewModel: BaseViewModel? = null
+    protected var mViewModel: BaseViewModel? = null
     private var mProgressDialog: Dialog? = null
     protected var mBinding: T? = null
     private var isLocationPermissionGranted = false

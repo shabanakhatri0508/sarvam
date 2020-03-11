@@ -199,8 +199,10 @@
     <style name="smallButtonStyle" parent="Roboto.Large">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="paddingStart">@dimen/large_padding</item>
-        <item name="paddingEnd">@dimen/large_padding</item>
+        <item name="android:paddingStart">@dimen/huge_padding</item>
+        <item name="android:paddingEnd">@dimen/huge_padding</item>
+        <item name="android:paddingTop">@dimen/medium_padding</item>
+        <item name="android:paddingBottom">@dimen/medium_padding</item>
         <item name="background">@drawable/btn_bg</item>
         <item name="android:textColor">@android:color/white</item>
     </style>

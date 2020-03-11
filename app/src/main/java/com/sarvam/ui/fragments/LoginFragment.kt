@@ -46,7 +46,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_submit -> {
-                replaceFragment(R.id.container, OtpFragment())
+                replaceFragment(R.id.container, OtpFragment(), null)
             }
         }
     }
